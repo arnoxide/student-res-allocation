@@ -1,0 +1,98 @@
+[11-May-2023 08:51:53 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 08:51:55 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 08:51:56 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 08:52:02 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[11-May-2023 08:52:05 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 08:52:10 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[11-May-2023 08:52:16 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 08:52:19 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[11-May-2023 08:58:52 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 08:59:03 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 08:59:17 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[11-May-2023 09:14:51 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 09:14:58 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 09:15:04 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[11-May-2023 09:15:06 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[11-May-2023 09:26:44 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 11:19:34 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 20:24:52 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[11-May-2023 20:52:53 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[12-May-2023 08:09:18 Africa/johannesburg] PHP Fatal error:  Uncaught TypeError: strtotime(): Argument #2 ($baseTimestamp) must be of type ?int, string given in /home/theboxla/public_html/database/mailer.php:2183
+Stack trace:
+#0 /home/theboxla/public_html/database/mailer.php(2183): strtotime('+2 minutes', '2023-05-12 08:0...')
+#1 /home/theboxla/public_html/database/authcontroller.php(989): sendOtpLink('Mchizakingsley@...', '29850', 'wu74CUkF2SWf9Tv...', 'Chrome', '113.0.0.0', 'Windows 10 64-b...', 'Chrome 113.0.0....', '', '', '2023-05-12 08:0...')
+#2 /home/theboxla/public_html/database/password-reset.php(1): require_once('/home/theboxla/...')
+#3 {main}
+  thrown in /home/theboxla/public_html/database/mailer.php on line 2183
+[12-May-2023 08:14:07 Africa/johannesburg] PHP Parse error:  Unmatched '}' in /home/theboxla/public_html/database/mailer.php on line 2195
+[12-May-2023 08:14:20 Africa/johannesburg] PHP Fatal error:  Uncaught Error: Attempt to assign property "Subject" on null in /home/theboxla/public_html/database/mailer.php:2181
+Stack trace:
+#0 /home/theboxla/public_html/database/authcontroller.php(5): require_once()
+#1 /home/theboxla/public_html/database/password-reset.php(1): require_once('/home/theboxla/...')
+#2 {main}
+  thrown in /home/theboxla/public_html/database/mailer.php on line 2181
+[12-May-2023 16:18:07 Africa/johannesburg] PHP Warning:  Undefined variable $token in /home/theboxla/public_html/database/mailer.php on line 2175
+[12-May-2023 16:18:07 Africa/johannesburg] PHP Warning:  Undefined variable $expirationTime in /home/theboxla/public_html/database/mailer.php on line 2175
+[12-May-2023 16:18:07 Africa/johannesburg] PHP Fatal error:  Uncaught Error: Attempt to assign property "Subject" on null in /home/theboxla/public_html/database/mailer.php:2180
+Stack trace:
+#0 /home/theboxla/public_html/database/authcontroller.php(5): require_once()
+#1 /home/theboxla/public_html/database/otp-verification.php(1): require_once('/home/theboxla/...')
+#2 {main}
+  thrown in /home/theboxla/public_html/database/mailer.php on line 2180
+[12-May-2023 16:18:30 Africa/johannesburg] PHP Warning:  Undefined variable $token in /home/theboxla/public_html/database/mailer.php on line 2175
+[12-May-2023 16:18:30 Africa/johannesburg] PHP Warning:  Undefined variable $expirationTime in /home/theboxla/public_html/database/mailer.php on line 2175
+[12-May-2023 16:18:30 Africa/johannesburg] PHP Fatal error:  Uncaught Error: Attempt to assign property "Subject" on null in /home/theboxla/public_html/database/mailer.php:2180
+Stack trace:
+#0 /home/theboxla/public_html/database/authcontroller.php(5): require_once()
+#1 /home/theboxla/public_html/database/otp-verification.php(1): require_once('/home/theboxla/...')
+#2 {main}
+  thrown in /home/theboxla/public_html/database/mailer.php on line 2180
+[12-May-2023 16:44:12 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[12-May-2023 16:44:17 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[12-May-2023 16:44:20 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[12-May-2023 16:44:24 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[12-May-2023 16:44:36 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 6
+[12-May-2023 16:44:39 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 40
+[12-May-2023 18:29:08 Africa/johannesburg] PHP Warning:  include(flash-messages.php): Failed to open stream: No such file or directory in /home/theboxla/public_html/database/otp-verification.php on line 2
+[12-May-2023 18:29:08 Africa/johannesburg] PHP Warning:  include(): Failed opening 'flash-messages.php' for inclusion (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home/theboxla/public_html/database/otp-verification.php on line 2
+[12-May-2023 18:29:08 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 18:29:41 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 18:29:51 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 18:29:54 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 18:30:01 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 18:31:33 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 18:31:42 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:53:48 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:54:04 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:54:31 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:54:35 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:54:45 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:54:48 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:55:02 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:55:26 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[12-May-2023 19:55:33 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:33:18 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:33:32 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:33:38 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:33:47 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:33:55 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:34:04 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:37:03 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 36
+[13-May-2023 08:37:09 Africa/johannesburg] PHP Warning:  Undefined array key "pass" in /home/theboxla/public_html/database/otp-verification.php on line 9
+[13-May-2023 08:37:15 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 36
+[13-May-2023 08:37:20 Africa/johannesburg] PHP Warning:  Undefined array key "pass" in /home/theboxla/public_html/database/otp-verification.php on line 9
+[13-May-2023 08:44:26 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 36
+[13-May-2023 08:44:29 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 36
+[13-May-2023 08:44:39 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 36
+[13-May-2023 08:46:21 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 41
+[13-May-2023 08:46:25 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 41
+[13-May-2023 08:46:29 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 41
+[13-May-2023 08:46:31 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 41
+[13-May-2023 08:46:35 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 41
+[13-May-2023 08:47:27 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:47:27 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 116
+[13-May-2023 08:47:27 Africa/johannesburg] PHP Warning:  Undefined array key "token" in /home/theboxla/public_html/database/otp-verification.php on line 160
+[13-May-2023 08:47:30 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:47:32 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:47:40 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47
+[13-May-2023 08:47:42 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/database/otp-verification.php on line 47

@@ -1,0 +1,36 @@
+[07-May-2023 17:47:29 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/index.php on line 3
+[07-May-2023 17:47:29 Africa/johannesburg] PHP Fatal error:  Uncaught TypeError: mysqli_fetch_assoc(): Argument #1 ($result) must be of type mysqli_result, bool given in /home/theboxla/public_html/settings/index.php:80
+Stack trace:
+#0 /home/theboxla/public_html/settings/index.php(80): mysqli_fetch_assoc(false)
+#1 {main}
+  thrown in /home/theboxla/public_html/settings/index.php on line 80
+[07-May-2023 17:48:00 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/index.php on line 3
+[07-May-2023 17:48:00 Africa/johannesburg] PHP Fatal error:  Uncaught TypeError: mysqli_fetch_assoc(): Argument #1 ($result) must be of type mysqli_result, bool given in /home/theboxla/public_html/settings/index.php:80
+Stack trace:
+#0 /home/theboxla/public_html/settings/index.php(80): mysqli_fetch_assoc(false)
+#1 {main}
+  thrown in /home/theboxla/public_html/settings/index.php on line 80
+[07-May-2023 18:02:21 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/verification.php on line 6
+[07-May-2023 18:02:21 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:04:30 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/verification.php on line 6
+[07-May-2023 18:04:30 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:04:39 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/verification.php on line 6
+[07-May-2023 18:04:39 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:14:28 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/verification.php on line 6
+[07-May-2023 18:14:28 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:15:05 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/verification.php on line 6
+[07-May-2023 18:15:05 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:15:48 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/verification.php on line 6
+[07-May-2023 18:15:48 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:16:19 Africa/johannesburg] PHP Warning:  Undefined array key "id" in /home/theboxla/public_html/settings/verification.php on line 6
+[07-May-2023 18:17:26 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:17:45 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:17:52 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:06 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:08 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:13 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:14 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:22 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:31 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:39 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
+[07-May-2023 18:18:47 Africa/johannesburg] PHP Warning:  Undefined array key "fname" in /home/theboxla/public_html/settings/verification.php on line 48
