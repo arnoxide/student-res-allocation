@@ -19,30 +19,31 @@ if ($conn->connect_error) {
 }
 
 
-$studentNumber = $_POST['student_number'];
-$action = $_POST['action'];
+// $studentNumber = $_POST['student_number'];
+// $action = $_POST['action'];
+$studentNumber = $_GET['id'];
 
-
-switch ($action) {
-    case 'approve':
-        $newStatus = 'Approved';
-        break;
-    case 'reject':
-        $newStatus = 'Rejected';
-        break;
-    case 'waiting':
-        $newStatus = 'Waiting List';
-        break;
-    default:
-        echo "Invalid action";
-        exit();
-}
+// switch ($action) {
+//     case 'approve':
+//         $newStatus = 'Approved';
+//         break;
+//     case 'reject':
+//         $newStatus = 'Rejected';
+//         break;
+//     case 'waiting':
+//         $newStatus = 'Waiting List';
+//         break;
+//     default:
+//         echo "Invalid action";
+//         exit();
+// }
 
 // Update the status in the database
-$sql = "UPDATE applications SET status = '$newStatus' WHERE studentNumber = '$studentNumber'";
+$sql = "UPDATE applications SET status = 'Rejected' WHERE studentNumber = '$studentNumber'";
 
 if ($conn->query($sql) === TRUE) {
     echo "Status updated successfully";
+    header("refresh:0; url=application");
 } else {
     echo "Error updating status: " . $conn->error;
 }

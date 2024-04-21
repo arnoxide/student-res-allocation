@@ -148,7 +148,7 @@ $thebox_reg_number = isset($companies[0]['thebox_reg_number']) ? $companies[0]['
                               </div>
                             </div>
                           </div>
-                          <span>Companies</span>
+                          <span>Residences</span>
                           <h3 class="card-title text-nowrap mb-1">3</h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
                         </div>
@@ -184,7 +184,7 @@ $thebox_reg_number = isset($companies[0]['thebox_reg_number']) ? $companies[0]['
                               </div>
                             </div>
                           </div>
-                          <span>Investors</span>
+                          <span>Applications</span>
                           <h3 class="card-title text-nowrap mb-1">2</h3>
                           <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +28.42%</small>
                         </div>

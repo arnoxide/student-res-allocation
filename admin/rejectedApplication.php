@@ -28,9 +28,17 @@ if ($conn->connect_error) {
 // Query to fetch the residence details
 $sql = "SELECT applications.*, applications.id AS app_id, users.fname, users.lname 
         FROM applications 
-        INNER JOIN users ON applications.studentNumber = users.studentNumber ";
+        INNER JOIN users ON applications.studentNumber = users.studentNumber 
+        WHERE status = 'rejected'";
+
 $result = $conn->query($sql);
-$applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+if ($result !== false && $result->num_rows > 0) {
+    $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
+    // Handle the case when the query fails or returns no results
+    $applications = array();
+}
 
 ?>
 
@@ -43,7 +51,7 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <title>Applications</title>
+    <title>Approved Applications</title>
 
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.png" />
 
@@ -141,7 +149,7 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </nav>
                 <div class="content-wrapper">
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Applications</span></h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> Approved Applications</span></h4>
                         <div class="card">
                             <div class="table-responsive text-nowrap">
                                 <table id="datatablesSimple" class="table table-striped" style="width:100%">
@@ -155,7 +163,7 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                             <th>Level of study</th>
                                             <th>Status</th>
                                             <th>Date Created</th>
-                                            <th>Action</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -179,10 +187,8 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                         Action
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $key; ?>">
-    <a class="dropdown-item approve-action" href="approve?id=<?php echo $application['studentNumber'];?>" data-student-number="<?php echo $application['studentNumber']; ?>">Approve</a>
-    <a class="dropdown-item reject-action" href="reject?id=<?php echo $application['studentNumber'];?>" data-student-number="<?php echo $application['studentNumber']; ?>">Reject</a>
-    <a class="dropdown-item waiting-action" href="waiting?id=<?php echo $application['studentNumber'];?>" data-student-number="<?php echo $application['studentNumber']; ?>">Waiting List</a>
-</div>
+    <a class="dropdown-item approve-action" href="approve?id=<?php echo $application['studentNumber'];?>" data-student-number="<?php echo $application['studentNumber']; ?>">Assign Room</a>
+  
                                                 </div>
                                             </td>
                                         </tr>

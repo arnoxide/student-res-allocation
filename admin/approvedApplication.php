@@ -28,9 +28,17 @@ if ($conn->connect_error) {
 // Query to fetch the residence details
 $sql = "SELECT applications.*, applications.id AS app_id, users.fname, users.lname 
         FROM applications 
-        INNER JOIN users ON applications.studentNumber = users.studentNumber ";
+        INNER JOIN users ON applications.studentNumber = users.studentNumber 
+        WHERE status = 'approved'";
+
 $result = $conn->query($sql);
-$applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+if ($result !== false && $result->num_rows > 0) {
+    $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
+    // Handle the case when the query fails or returns no results
+    $applications = array();
+}
 
 ?>
 
@@ -43,7 +51,7 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-    <title>Applications</title>
+    <title>Approved Applications</title>
 
     <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.png" />
 
@@ -70,7 +78,11 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
         integrity="sha512-..." crossorigin="anonymous"></script>
+   <!-- jQuery -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -141,7 +153,7 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </nav>
                 <div class="content-wrapper">
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Applications</span></h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"> Approved Applications</span></h4>
                         <div class="card">
                             <div class="table-responsive text-nowrap">
                                 <table id="datatablesSimple" class="table table-striped" style="width:100%">
@@ -179,10 +191,12 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                                         Action
                                                     </button>
                                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton<?php echo $key; ?>">
-    <a class="dropdown-item approve-action" href="approve?id=<?php echo $application['studentNumber'];?>" data-student-number="<?php echo $application['studentNumber']; ?>">Approve</a>
+                                                    <a class="dropdown-item approve-action" href="#" data-student-number="<?php echo $application['studentNumber']; ?>"
+    data-residence="<?php echo $application['resName']; ?>" data-toggle="modal" data-target="#assign">
+    Assign Room
+</a>
     <a class="dropdown-item reject-action" href="reject?id=<?php echo $application['studentNumber'];?>" data-student-number="<?php echo $application['studentNumber']; ?>">Reject</a>
-    <a class="dropdown-item waiting-action" href="waiting?id=<?php echo $application['studentNumber'];?>" data-student-number="<?php echo $application['studentNumber']; ?>">Waiting List</a>
-</div>
+    
                                                 </div>
                                             </td>
                                         </tr>
@@ -198,7 +212,49 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </div>
         <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-
+<!-- Assign Modal -->
+    <div class="modal fade" id="assign" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Assign the Room</h5>
+                <button class="btn btn-link text-dark p-0 fixed-plugin-close-button" data-dismiss="modal" aria-label="Close">
+                    <i class="fa fa-close"></i>
+                </button>
+            </div>
+         <!-- Inside the modal body -->
+         <div class="modal-body">
+    <div class="card-body">
+        <form role="form text-left" method="POST" action="assign.php">
+            <div class="mb-3">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Full Name" aria-label="Full Name" aria-describedby="fullName-addon" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="residenceName">Residence Name:</label>
+                <input type="text" id="residenceName" name="residenceName" class="form-control" placeholder="Residence Name" aria-label="Residence Name" aria-describedby="residence-addon" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="roomType">Room Type:</label>
+                <select class="form-control" name="roomType" id="roomType">
+                    <option value="Double">Double Room</option>
+                    <option value="Single">Single Room</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="roomNumber">Room Number:</label>
+                <input type="text" id="roomNumber" name="roomNumber" class="form-control" aria-label="Room Number" aria-describedby="roomNumber-addon">
+            </div>
+            <input type="hidden" id="studentNumber" name="studentNumber">
+            <button type="submit" name="assign-room-btn" class="btn btn-primary">Assign Room</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </form>
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+</div>
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
@@ -216,49 +272,28 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
     }
     </script>
 
-    <script>
-  $(document).ready(function() {
-   
-    $('.approve-action').click(function(e) {
-        e.preventDefault();
-        console.log("Approve action clicked");
-        updateApplicationStatus($(this).data('student-number'), 'approve');
-    });
+<script>
+// JavaScript to handle the click event on Assign Room button and populate the modal
+$(document).on('click', '.approve-action', function() {
+    var studentNumber = $(this).data('student-number');
+    var residenceName = $(this).data('residence');
 
-    $('.reject-action').click(function(e) {
-        e.preventDefault();
-        console.log("Reject action clicked");
-        updateApplicationStatus($(this).data('student-number'), 'reject');
+    // AJAX request to fetch student details
+    $.ajax({
+        url: 'assign.php',
+        type: 'GET',
+        data: { studentNumber: studentNumber },
+        success: function(response) {
+            var student = JSON.parse(response);
+            $('#fullName').val(student.fname + ' ' + student.lname);
+            $('#residenceName').val(residenceName);
+            $('#studentNumber').val(studentNumber);
+        }
     });
-
-    $('.waiting-action').click(function(e) {
-        e.preventDefault();
-        console.log("Waiting action clicked");
-        updateApplicationStatus($(this).data('student-number'), 'waiting');
-    });
-
-   
-    function updateApplicationStatus(studentNumber, action) {
-        $.ajax({
-            url: 'update_application.php',
-            type: 'POST',
-            data: {
-                student_number: studentNumber,
-                action: action
-            },
-            success: function(response) {
-                console.log('AJAX Success:', response);
-               
-            },
-            error: function(xhr, status, error) {
-                console.log('AJAX Error:', error);
-            }
-        });
-    }
 });
+</script>
 
-
-    </script>
+    
 </body>
 
 </html>

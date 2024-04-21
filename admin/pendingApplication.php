@@ -28,7 +28,8 @@ if ($conn->connect_error) {
 // Query to fetch the residence details
 $sql = "SELECT applications.*, applications.id AS app_id, users.fname, users.lname 
         FROM applications 
-        INNER JOIN users ON applications.studentNumber = users.studentNumber ";
+        INNER JOIN users ON applications.studentNumber = users.studentNumber 
+        WHERE status='pending'";
 $result = $conn->query($sql);
 $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -141,7 +142,7 @@ $applications = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 </nav>
                 <div class="content-wrapper">
                     <div class="container-xxl flex-grow-1 container-p-y">
-                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Applications</span></h4>
+                        <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Pending Applications</span></h4>
                         <div class="card">
                             <div class="table-responsive text-nowrap">
                                 <table id="datatablesSimple" class="table table-striped" style="width:100%">
