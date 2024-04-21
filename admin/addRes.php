@@ -70,6 +70,7 @@ $stmt->bind_param("ssssiiiiisss", $residenceId, $resName, $address, $location, $
 
     if ($stmt->execute()) {
         echo "<script>alert('Resident Added Successfully');</script>";
+        header('Location: residence');
     } else {
         echo "Error: " . $stmt->error;
     }

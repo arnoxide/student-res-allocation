@@ -23,12 +23,17 @@
               </a>
             </li>
 
-
+            <li class="menu-item">
+                  <a href="AddRes" class="menu-link" >
+                    <div data-i18n="Basic">Add Residence</div>
+                  </a>
+                </li>
                 <li class="menu-item">
                   <a href="residence" class="menu-link" >
                     <div data-i18n="Basic">Residence</div>
                   </a>
                 </li>
+                
                 <li class="menu-item">
                   <a href="students" class="menu-link" >
                     <div data-i18n="Basic">Students</div>
