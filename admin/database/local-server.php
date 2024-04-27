@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db_name = 'theboxla_new_thebox';
+$db_name = 'student_allocation';
 
 $conn = new MySQLI($host, $user, $pass, $db_name);
 date_default_timezone_set('Africa/johannesburg');

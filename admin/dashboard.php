@@ -2,17 +2,20 @@
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header("location: index.php");
-    exit();
+  header("location: index.php");
+  exit();
 }
 
 $user = $_SESSION['user'];
-require_once 'database/authcontroller.php';
 
-$sql = "SELECT * FROM founders";
-$result=mysqli_query($conn, $sql);
-$companies= mysqli_fetch_all($result, MYSQLI_ASSOC);
-$thebox_reg_number = isset($companies[0]['thebox_reg_number']) ? $companies[0]['thebox_reg_number'] : '';
+// Connect to MySQL database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "student_allocation";
+$conn = mysqli_connect($servername, $username, $password, $database);
+
+
 ?>
 <!DOCTYPE html>
 
